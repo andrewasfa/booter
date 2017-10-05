@@ -1,5 +1,5 @@
 # booter
-A chrome extension that executes commands received from a server through <https://socket.io/ socket.io
+A chrome extension that executes commands received from a server through [socket.io](https://socket.io/)
 
 The *original goal* of this extension was to automate page reloads on dashboards (Google Slides published as presentation) running on wall monitors around the office. Instead of remoting into each one or even worse - clicking Reload manually, you should be able to type one command and the browser page of each client will reload.
 
