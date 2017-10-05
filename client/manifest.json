@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+
+  "name": "Booter",
+  "description": "Extension that reloads the page",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "background": {
+    "background_page": [
+      "background.html"
+    ],
+    "scripts":  [
+      "background.js",
+      "/socket.io/socket.io.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["/socket.io/socket.io.js", "client.js", "popup.js" ]
+  }],
+  "web_accessible_resources": [
+    "images/image1.png",
+    "script/myscript.js"
+ ],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "background",
+    "http://*/*",
+    "https://ajax.googleapis.com/",
+    "https://code.jquery.com/jquery-1.11.1.js"
+  ]
+}
