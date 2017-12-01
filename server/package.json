@@ -2,8 +2,13 @@
   "name": "socket-booter",
   "version": "0.0.1",
   "description": "test booter app",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
     "socket.io": "^2.0.3"
   }
 }

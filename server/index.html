@@ -4,13 +4,15 @@
     <title>Socket.IO chat</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      body { font: 13px Helvetica, Arial; max-width: 800px; margin:auto; border: 1px}
+      #instructions {background: #fff; padding: 30px;}
+      form { background: #000; padding: 1px;  bottom: 0; width: 100%; }
+      form input { border: 1; padding: 10px; width: 90%; margin-right: .5%; }
       form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages { list-style-type: none; margin: 0; padding: 0; overflow-y: auto; height:300px;}
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
+      #command {background: #b6fca6; font-size: 14px; line-height: 20px}
     </style>
   </head>
 
@@ -32,9 +34,20 @@
 </script>
 
   <body>
-    <ul id="messages"></ul>
+    <div id="messages">
+      <ul></ul>
+    </div>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
+      <div id="instructions" >
+        <h1>## Supported commands </h1>
+        <p/><b id="command">reload</b> - reloads the current page
+        <p/><b id="command">fullscreen</b> - sets the current page to fullscreen
+        <p/><b id="command">seturl http://yoururl.here</b> - navigates the current URL in browser to http://yoururl.here
+      </div>
     </form>
+
+
+
   </body>
 </html>
