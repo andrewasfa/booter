@@ -1,7 +1,7 @@
 # booter
-A chrome extension that executes commands received from a server through <https://socket.io/ socket.io
+A chrome extension that executes commands received from a server through <https://socket.io/>  socket.io
 
-The *original goal* of this extension was to automate page reloads on dashboards (Google Slides published as presentation) running on wall monitors around the office. Instead of remoting into each one or even worse - clicking Reload manually, you should be able to type one command and the browser page of each client will reload.
+The *original goal* of this extension was to automate page reloads on dashboards (Google Slides published as presentation) running on wall monitors around the office. Instead of remoting into each one or even worse - clicking Reload manually, you should be able to type one command in a  and the browser page of each client will reload.
 
 ## Structure
 **Client**
@@ -15,8 +15,8 @@ In the future you won't need to use the web interface of the server to type comm
 ## Get started
 ### Server
 1. Clone or download the repository.
-2. Go to the server directory, install NodeJS modules.
-3. Start the NodeJS server
+2. Go to the server directory, install NodeJS modules. `cd server`
+3. Start the NodeJS server `npm start`
 4. Navigate to *http://localhost:3005* and type your commands (make sure client is ready)
 
 ### Client
@@ -24,12 +24,36 @@ In the future you won't need to use the web interface of the server to type comm
 2. Right-click on the extension and go into *Options*, configure the server url and Enable the extension.
 
 
+## Important notes:
+1. Make sure to check in `manifest.json` the permissions on which URL's to execute the content scrips.
+Currently it's:
+```
+"content_scripts": [
+  {
+    "matches": ["http://*/*","https://*/*" ],
+    "js": ["/socket.io/socket.io.js", "client.js", "popup.js" ]
+```
+Which means any HTTP or HTTPS website. Or configure it to lock it down.
+
+2. You may need to allow to run unauthenticated scripts (shield icon in Chrome url bar on the right).
+
 
 ## Supported commands
-```reload``` - reloads the current page
 
-```seturl http://yoururl.here``` - navigates the current URL in browser to http://yoururl.here
+`reload` - reloads the current page
 
+`fullscreen` - sets the current page to fullscreen
+
+`seturl http://yoururl.here` - navigates the current URL in browser to http://yoururl.here
+
+
+
+## ToDo
+* Make sure the extension runs on all URL types (even if URL cannot be found), otherwise it could cause the client to disconnect and be unrecoverable without manual intervention. (this one should be already done): >>TEST
+* Display a list of connected clients on the command page.
+* Add ability to configure username on each client for ease for visibility on the server.
+- Add templates to display data nicely about connected users (create copy for the /clients endpoint)
+- Fix encrypted connection
 
 <div> Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
 </div>

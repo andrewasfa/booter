@@ -4,9 +4,11 @@ function save_options() {
 
   var serverUrl = document.getElementById('serverUrl').value;
   var enableme = document.getElementById('enableme').checked;
+  var nickname = document.getElementById('nickname').value;
   chrome.storage.sync.set({
     enableme: enableme,
-    serverUrl: serverUrl
+    serverUrl: serverUrl,
+    nickname: nickname
   }, function() {
     // Update status to let user know options were saved.
     var status = document.getElementById('status');
@@ -25,11 +27,13 @@ function restore_options() {
 
   chrome.storage.sync.get({
     enableme: false,
-    serverUrl: "http://localhost:3000"
+    serverUrl: "http://localhost:3005",
+    nickname: "unknown"
   }, function(items) {
     //document.getElementById('color').value = items.favoriteColor;
     document.getElementById('enableme').checked = items.enableme;
     document.getElementById('serverUrl').value = items.serverUrl;
+    document.getElementById('nickname').value = items.nickname;
   });
 }
 

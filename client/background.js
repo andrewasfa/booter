@@ -17,8 +17,17 @@ chrome.runtime.onMessage.addListener(
                   function (arrayOfTabs)
                 {
                   var code = 'window.location.reload();';
+
                   chrome.tabs.executeScript(arrayOfTabs[0].id, {code: code});
                   //chrome.tabs.reload(arrayOfTabs[0].id);
+                });
+                break;
+
+              case str.includes("fullscreen"):
+                chrome.tabs.query({active: true, currentWindow: true},
+                  function (arrayOfTabs)
+                {
+                  chrome.windows.update(arrayOfTabs[0].windowId, { state: "fullscreen" })
                 });
                 break;
 

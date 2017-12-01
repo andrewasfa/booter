@@ -57,6 +57,12 @@ typings/
 # dotenv environment variables file
 .env
 
+# certificate info
+.pem
+.crt
+
+
 # Additional folders and files
 # The library for socket io that I saved
 socket.io-client-2.0.3/
+old/

@@ -14,14 +14,15 @@
 
 chrome.storage.sync.get({
   enableme: false,
-  serverUrl: "http://localhost:3000"
+  serverUrl: "https://localhost:443",
+  nickname: "noname"
 }, function(items) {
   //document.getElementById('color').value = items.favoriteColor;
   console.log(items.enableme);
   console.log(items.serverUrl);
 
   if(items.enableme == true){
-    var socket = io.connect(items.serverUrl);
+    var socket = io.connect(items.serverUrl, {query:"nickname="+items.nickname});
 
     /*
     socket.on("hello",function(msg) {
