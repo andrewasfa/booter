@@ -8,7 +8,7 @@ The *original goal* of this extension was to automate page reloads on dashboards
 This folder includes files for the Chrome extension.
 Chrome extension is the client. It runs in the browser and listens for commands from the server. Currently it's required to _"Load unpacked extension..."_ in Chrome, but that will be changed.
 
-###Server
+### Server
 This folder contains NodeJS server has a web interface (that contains a chat window where you can type your commands). List of commands is further below.
 In the future you won't need to use the web interface of the server to type commands, it will integrate to other chat platforms (PureCloud, Slack, etc).
 
@@ -42,6 +42,7 @@ Which means any HTTP or HTTPS website. Or configure it to lock it down.
 You can navigate to the server and access the following endpoints:
 
 `/` - chat interface to type commands
+
 `/clients` - see an array of connected clients
 
 ### Commands:
