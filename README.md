@@ -4,11 +4,11 @@ A chrome extension that executes commands received from a server through [socket
 The *original goal* of this extension was to automate page reloads on dashboards (Google Slides published as presentation) running on wall monitors around the office. Instead of remoting into each one or even worse - clicking Reload manually, you should be able to type one command in a  and the browser page of each client will reload.
 
 ## Structure
-**Client**
+### Client
 This folder includes files for the Chrome extension.
 Chrome extension is the client. It runs in the browser and listens for commands from the server. Currently it's required to _"Load unpacked extension..."_ in Chrome, but that will be changed.
 
-**Server**
+###Server
 This folder contains NodeJS server has a web interface (that contains a chat window where you can type your commands). List of commands is further below.
 In the future you won't need to use the web interface of the server to type commands, it will integrate to other chat platforms (PureCloud, Slack, etc).
 
@@ -38,8 +38,13 @@ Which means any HTTP or HTTPS website. Or configure it to lock it down.
 2. You may need to allow to run unauthenticated scripts (shield icon in Chrome url bar on the right).
 
 
-## Supported commands
+## Supported commands and usage
+You can navigate to the server and access the following endpoints:
 
+`/` - chat interface to type commands
+`/clients` - see an array of connected clients
+
+### Commands:
 `reload` - reloads the current page
 
 `fullscreen` - sets the current page to fullscreen
@@ -47,11 +52,10 @@ Which means any HTTP or HTTPS website. Or configure it to lock it down.
 `seturl http://yoururl.here` - navigates the current URL in browser to http://yoururl.here
 
 
-
 ## ToDo
-* Make sure the extension runs on all URL types (even if URL cannot be found), otherwise it could cause the client to disconnect and be unrecoverable without manual intervention. (this one should be already done): >>TEST
-* Display a list of connected clients on the command page.
-* Add ability to configure username on each client for ease for visibility on the server.
+x Make sure the extension runs on all URL types (even if URL cannot be found), otherwise it could cause the client to disconnect and be unrecoverable without manual intervention. (this one should be already done): >>TEST
+x Display a list of connected clients on the command page.
+x Add ability to configure username on each client for ease for visibility on the server.
 - Add templates to display data nicely about connected users (create copy for the /clients endpoint)
 - Fix encrypted connection
 
