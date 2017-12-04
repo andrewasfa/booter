@@ -61,6 +61,8 @@ typings/
 .pem
 .crt
 
+# archive
+.zip
 
 # Additional folders and files
 # The library for socket io that I saved

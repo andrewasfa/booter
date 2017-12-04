@@ -17,7 +17,8 @@ In the future you won't need to use the web interface of the server to type comm
 1. Clone or download the repository.
 2. Go to the server directory, install NodeJS modules. `cd server`
 3. Start the NodeJS server `npm start`
-4. Navigate to *http://localhost:3005* and type your commands (make sure client is ready)
+4. Navigate to *http://localhost:3005* and type your commands (make sure there are clients connected if you expect some sort of result)
+*Note:* The clients choose which server to connect via the configuration options, so it is assumed safe and no authentication between client server has been added.
 
 ### Client
 1. Load the extension into Chrome.
@@ -41,11 +42,12 @@ Which means any HTTP or HTTPS website. Or configure it to lock it down.
 ## Supported commands and usage
 You can navigate to the server and access the following endpoints:
 
-`/` - chat interface to type commands
+`{server url}/` - chat interface to type commands
 
-`/clients` - see an array of connected clients
+`{server url}/clients` - see the connected clients (array)
 
 ### Commands:
+Just type the commands in the chat window on the server.
 `reload` - reloads the current page
 
 `fullscreen` - sets the current page to fullscreen
@@ -54,9 +56,11 @@ You can navigate to the server and access the following endpoints:
 
 
 ## ToDo
-x Make sure the extension runs on all URL types (even if URL cannot be found), otherwise it could cause the client to disconnect and be unrecoverable without manual intervention. (this one should be already done): >>TEST
-x Display a list of connected clients on the command page.
-x Add ability to configure username on each client for ease for visibility on the server.
+- [done] Make sure the extension runs on all URL types (even if URL cannot be found), otherwise it could cause the client to disconnect and be unrecoverable without manual intervention. (this one should be already done): >>TEST
+- [done] Display a list of connected clients on the command page.
+- [done] Add ability to configure username on each client for ease for visibility on the server.
+- Change URL endpoint for clients and chat to be different (not default `/`)
+- Add command to allow change IP of the server in client configuration (server should be able to tell clients if it's about to change IP)
 - Add templates to display data nicely about connected users (create copy for the /clients endpoint)
 - Fix encrypted connection
 
