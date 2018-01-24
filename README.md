@@ -63,11 +63,15 @@ Just type the commands in the chat window on the server.
 
 
 ## Screenshots:
-![Screenshot1](https://github.com/andrewasfa/booter/blob/master/client/sh1.png)"Extension added"
-![Screenshot2](https://github.com/andrewasfa/booter/blob/master/client/sh2.png)"Extension options"
-![Screenshot3](https://github.com/andrewasfa/booter/blob/master/client/sh3.png)"Commands"
-![Screenshot4](https://github.com/andrewasfa/booter/blob/master/client/sh4.png)"Command examples"
+![Screenshot1][sh1](https://github.com/andrewasfa/booter/blob/master/client/sh1.png)
+![Screenshot2][sh2](https://github.com/andrewasfa/booter/blob/master/client/sh2.png)
+![Screenshot3][sh3](https://github.com/andrewasfa/booter/blob/master/client/sh3.png)
+![Screenshot4][sh4](https://github.com/andrewasfa/booter/blob/master/client/sh4.png)
 
+[sh1]: sh1.png "Extension Added"
+[sh1]: sh2.png "Extension Options"
+[sh1]: sh3.png "Commands at /"
+[sh1]: sh4.png "Command examples"
 
 ## ToDo
 - [done] Make sure the extension runs on all URL types (even if URL cannot be found), otherwise it could cause the client to disconnect and be unrecoverable without manual intervention. (this one should be already done): >>TEST
