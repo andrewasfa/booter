@@ -1,5 +1,7 @@
 # booter ![icon](https://github.com/andrewasfa/booter/blob/master/client/icon.png)
 
+Check out screenshots here: (https://chrome.google.com/webstore/detail/booter/kgpdacpdhakobnbaeodpihkklilhedho)
+
 A chrome extension that executes commands received from a server through [socket.io](https://socket.io/)
 
 The *original goal* of this extension was to automate page reloads on dashboards (Google Slides published as presentation) running on wall monitors around the office. Instead of remoting into each one or even worse - clicking Reload manually, you should be able to type one command in a  and the browser page of each client will reload.
