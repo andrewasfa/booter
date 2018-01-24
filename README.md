@@ -1,6 +1,5 @@
-# booter
+# booter ![icon](https://github.com/andrewasfa/booter/blob/master/client/icon.png)
 
-![icon](https://github.com/andrewasfa/booter/blob/master/client/icon.png)
 A chrome extension that executes commands received from a server through [socket.io](https://socket.io/)
 
 The *original goal* of this extension was to automate page reloads on dashboards (Google Slides published as presentation) running on wall monitors around the office. Instead of remoting into each one or even worse - clicking Reload manually, you should be able to type one command in a  and the browser page of each client will reload.
@@ -26,6 +25,7 @@ In the future you won't need to use the web interface of the server to type comm
 1. Load the extension into Chrome.
 
     a. You can either load the unpacked extension from the repository folder, or
+
     b. You can install the latest version of the published unlisted extension: [chrome web store](https://chrome.google.com/webstore/detail/booter/kgpdacpdhakobnbaeodpihkklilhedho)
 
 2. Right-click on the extension and go into *Options*, configure the **server url** and **Enable** the extension.
